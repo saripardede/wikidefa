@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Laravel preparation
+# Clear config dan generate key
 php artisan config:clear
-php artisan migrate --force
 php artisan key:generate
 
-# Jalankan Laravel di Railway
-php artisan serve --host=0.0.0.0 --port=3000
+# Jalankan Laravel di PORT Railway
+php -S 0.0.0.0:$PORT -t public
